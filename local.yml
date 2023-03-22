@@ -6,7 +6,7 @@
 
   - name: Room -- Pull latest image and restart if needed
     community.docker.docker_compose:
-      project_src: /home/{{ admin_username }}/room
+      project_src: /home/admin/room
       state: present
       pull: true
       remove_orphans: true
@@ -14,7 +14,7 @@
 
   - name: graphql -- Pull latest image and restart if needed
     community.docker.docker_compose:
-      project_src: /home/{{ admin_username }}/graphql
+      project_src: /home/admin/graphql
       state: present
       pull: true
       remove_orphans: true
@@ -22,7 +22,7 @@
 
   - name: frontend -- Pull latest image and restart if needed
     community.docker.docker_compose:
-      project_src: /home/{{ admin_username }}/frontend
+      project_src: /home/admin/frontend
       state: present
       pull: true
       remove_orphans: true
