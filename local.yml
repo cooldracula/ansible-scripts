@@ -3,6 +3,26 @@
   become: true
 
   tasks:
-  - name: install htop
-    apt:
-      name: htop
+
+  - name: Room -- Pull latest image and restart if needed
+    community.docker.docker_compose:
+      project_src: /home/{{ admin_username }}/room
+      state: present
+      pull: true
+      remove_orphans: true
+
+
+  - name: graphql -- Pull latest image and restart if needed
+    community.docker.docker_compose:
+      project_src: /home/{{ admin_username }}/graphql
+      state: present
+      pull: true
+      remove_orphans: true
+
+
+  - name: frontend -- Pull latest image and restart if needed
+    community.docker.docker_compose:
+      project_src: /home/{{ admin_username }}/frontend
+      state: present
+      pull: true
+      remove_orphans: true
